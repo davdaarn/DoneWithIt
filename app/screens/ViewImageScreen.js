@@ -1,14 +1,22 @@
 import { View, Text, Image, StyleSheet, TouchableOpacity } from 'react-native'
+import AppButton from '../components/AppButton'
 import colors from '../config/colors'
+import { MaterialCommunityIcons } from '@expo/vector-icons'
 
 export const ViewImageScreen = function() {
   return (
     <View style={styles.screen}>
       <View style={styles.buttonContainer}>
-        <TouchableOpacity style={{...styles.button, ...styles.buttonDelete}}></TouchableOpacity>
-        <TouchableOpacity style={{...styles.button, ...styles.button2}}></TouchableOpacity>
+
+        <TouchableOpacity style={{ ...styles.buttonClose }}>
+          <MaterialCommunityIcons name='close' color='white' size={30} />
+        </TouchableOpacity>
+
+        <TouchableOpacity style={{ ...styles.button, ...styles.buttonDelete }}>
+          <MaterialCommunityIcons name='trash-can-outline' color='white' size={35} />
+        </TouchableOpacity>
       </View>
-      <Image style={styles.image} source={require('../assets/chair.jpg')}/>
+      <Image style={styles.image} source={require('../assets/chair.jpg')} />
     </View>
   )
 }
@@ -27,14 +35,12 @@ const styles = StyleSheet.create({
     width: 50,
     height: 50,
   },
-  buttonDelete: {
-    backgroundColor: colors.primary,
+  buttonClose: {
     position: 'absolute',
     top: 40,
     left: 30
   },
-  button2: {
-    backgroundColor: colors.secondary,
+  buttonDelete: {
     position: 'absolute',
     top: 40,
     right: 30
