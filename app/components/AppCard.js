@@ -3,13 +3,13 @@ import colors from '../config/colors'
 import { AppText } from './AppText'
 
 
-const AppCard = (props) => {
+const AppCard = ({ source, title, subTitle }) => {
   return (
     <View style={styles.appCard}>
-      <Image style={{ ...styles.image }} source={props.source}></Image>
+      <Image style={{ ...styles.image }} source={source}></Image>
       <View style={styles.detailsContainer}>
-        <AppText style={styles.title}>{props.title}</AppText>
-        <AppText style={styles.subTitle}>{props.subTitle}</AppText>
+        <AppText style={styles.title}>{title}</AppText>
+        <AppText style={styles.subTitle}>{subTitle}</AppText>
       </View>
     </View>
   )
@@ -19,7 +19,7 @@ export default AppCard
 
 const styles = StyleSheet.create({
   appCard: {
-    marginTop: 100,
+    marginTop: 20,
     borderRadius: 15,
     backgroundColor: 'white',
     overflow: 'hidden'
